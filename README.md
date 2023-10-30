@@ -31,7 +31,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 - **Titre :** “Exemple de Projet - Gestion de Congés”
 - Présentation détaillée d’un exemple de projet de gestion des demandes de congés :
   - Modélisation d’un processus de demande de congés.
-  - Gestion des tâches, des flux de travail et des rôles.
+![process model](/process.png?raw=true "Gestion de conges modele")
 
 ## Slide 7 : Conclusion
 
