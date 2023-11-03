@@ -47,3 +47,5 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 - [Baeldung camunda](https://www.baeldung.com/spring-boot-embedded-camunda)
 - [Article sur medium](https://medium.com/nerd-for-tech/bpmn2-0-camunda-workflow-spring-boot-application-2381f3d42e5f)
 - [Camunda Engine Rest Dcos](https://docs.camunda.org/manual/7.7/reference/rest/decision-definition/)
+- [Camunda BPMN Reference](https://camunda.com/bpmn/reference/)
+
