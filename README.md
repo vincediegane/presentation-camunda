@@ -25,11 +25,15 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
   2. Configurer la source de données pour Camunda.
   3. Initialiser le moteur Camunda dans l’application Java.
 
-## Slide 7 : Presentation de Engine REST
+## Slide 7 :Engine REST API
 
   1. ...
 
-## Slide 8 : Exemple de Projet - Gestion de Congés
+## Slide 8 : External API
+
+  1. ...
+
+## Slide 9 : Exemple de Projet - Gestion de Congés
 
 - **Titre :** “Exemple de Projet - Gestion de Congés”
 - Présentation détaillée d’un exemple de projet de gestion des demandes de congés :
