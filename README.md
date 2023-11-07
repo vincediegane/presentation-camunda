@@ -32,7 +32,8 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 ## Slide 8 : External Tasks
 
   1. Une tache externe (external task) est une étape d'un processus gérée en dehors du moteur de processus, ce qui permet une intégration flexible avec d'autres systèmes et une collaboration avec des acteurs externes pour l'accomplissement de la tâche.
-  2. 
+  2. Exemple:
+  3. Avantages à utiliser les taches externes:
 
 ## Slide 9 : Exemple de Projet - Gestion de Congés
 
