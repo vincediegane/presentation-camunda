@@ -29,7 +29,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 
   1. ...
 
-## Slide 8 : External API
+## Slide 8 : External Tasks
 
   1. ...
 
