@@ -31,12 +31,17 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
   2. Pour interagir avec l'API REST de Camunda, vous devez effectuer des requêtes HTTP en utilisant le langage de programmation ou l'outil de votre choix (par exemple, cURL, Postman, Java, Javascript etc.). Les méthodes HTTP courantes que vous utiliserez comprennent GET, POST, PUT et DELETE. Merci de consulter la documentation officielle de Camunda( lien dans Docs sources) pour obtenir des informations détaillées sur les points d'accès de l'API, cependant en voici un exemple.
   3. Exemple:
        - Pour démarrer un processus:
+         
            POST /process-definition/{id}/start
+         
            POST /process-definition/key/{key}/start
+         
            POST /process-definition/key/{key}/tenant-id/{tenant-id}/start
 
            **id** 	 	    L'identifiant de la définition du processus à récupérer.
+         
            **key** 	      La clé de la définition du processus (la dernière version de celle-ci) doit être récupérée.
+         
            **tenant-id** 	L'identifiant du locataire auquel appartient la définition du procédé.
 
          Le Request Body : Un objet JSON avec les propriétés suivantes: (au moins un objet JSON vide {}ou un payload de demande vide)
