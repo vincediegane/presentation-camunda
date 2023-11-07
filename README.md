@@ -41,7 +41,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 
          Le Request Body : Un objet JSON avec les propriétés suivantes: (au moins un objet JSON vide {}ou un payload de demande vide)
          Ex:
-         ’’’
+         ~~~JSON
             {
               "variables": {
                 "nom": {
@@ -54,7 +54,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
                 }
               }
             }
-         ’’’
+         \~~~
 
 ## Slide 8 : External Tasks
 
