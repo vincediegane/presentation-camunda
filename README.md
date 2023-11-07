@@ -29,7 +29,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 
   1. L'API REST permet de gérer et d'exécuter les processus BPMN.
   2. Pour interagir avec l'API REST de Camunda, vous devez effectuer des requêtes HTTP en utilisant le langage de programmation ou l'outil de votre choix (par exemple, cURL, Postman, Java, Javascript etc.). Les méthodes HTTP courantes que vous utiliserez comprennent GET, POST, PUT et DELETE. Merci de consulter la documentation officielle de Camunda(lien dans Docs sources) pour obtenir des informations détaillées sur les points d'accès de l'API, cependant en voici quelques exemples.
-  3. Exemples:
+  3. Exemple:
        - Pour démarrer un processus:
            POST /process-definition/{id}/start
            POST /process-definition/key/{key}/start
