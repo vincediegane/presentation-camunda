@@ -48,4 +48,5 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 - [Article sur medium](https://medium.com/nerd-for-tech/bpmn2-0-camunda-workflow-spring-boot-application-2381f3d42e5f)
 - [Camunda Engine Rest Dcos](https://docs.camunda.org/manual/7.7/reference/rest/decision-definition/)
 - [Camunda BPMN Reference](https://camunda.com/bpmn/reference/)
+- [Camunda external tasks article](https://blog.bernd-ruecker.com/how-to-write-glue-code-without-java-delegates-in-camunda-cloud-9ec0495d2ba5)
 
