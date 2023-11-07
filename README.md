@@ -52,7 +52,9 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
                 "date": {
                   "type": "String",
                   "value": "07/11/23"
-                }
+                },
+               // etc...
+               // l'ensembles des variables qu'il faudra renseigner pour démarrer l'instance 
               }
             }
          ~~~
