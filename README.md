@@ -1,8 +1,8 @@
-## Slide 1 : Qu’est-ce que Camunda ?
+## 1 : Qu’est-ce que Camunda ?
 
 - Camunda BPM est un système open source de gestion de processus métier qui facilite l’automatisation et l’optimisation des flux de travail.
 
-## Slide 2 : Architecture de Camunda
+## 2 : Architecture de Camunda
 
 - Camunda Engine : Le moteur d’exécution qui gère le cycle de vie des processus.
 - Camunda Modeler : Permet de créer, modifier et déployer des modèles de processus BPMN.
@@ -10,7 +10,7 @@
 - Camunda Cockpit : Outil de supervision permettant de suivre les instances de processus et d’analyser les performances.
 - Camunda Admin : Interface d’administration pour la configuration et la gestion des utilisateurs.
 
-## Slide 3 : Composants de Camunda modeler
+## 3 : Composants de Camunda modeler
 
 1. Tâches : Les tâches représentent les activités ou les étapes spécifiques qui doivent être accomplies dans le processus. Elles sont généralement symbolisées par des rectangles avec des coins arrondis.
 2. Événements : Les événements marquent le début, la fin ou les déclencheurs d'actions dans un processus. Ils peuvent être des cercles pour les événements de début, des carrés pour les événements intermédiaires, et des losanges pour les événements de fin.
@@ -19,13 +19,13 @@
 
 En combinant ces éléments de manière appropriée dans un diagramme BPMN, les organisations peuvent modéliser, analyser et optimiser leurs processus métier, ce qui facilite la compréhension, la communication et l’automatisation des activités opérationnelles.
 
-## Slide 6 : Intégration de Camunda dans un projet Java
+## 4 : Intégration de Camunda dans un projet Java
 
   1. Inclure les dépendances de Camunda dans le fichier `pom.xml`.
   2. Configurer la source de données pour Camunda.
   3. Initialiser le moteur Camunda dans l’application Java.
 
-## Slide 7 :Engine REST API
+## 5 :Engine REST API
 
   1. L'API REST permet de gérer et d'exécuter les processus BPMN.
   2. Pour interagir avec l'API REST de Camunda, vous devez effectuer des requêtes HTTP en utilisant le langage de programmation ou l'outil de votre choix (par exemple, cURL, Postman, Java, Javascript etc.). Les méthodes HTTP courantes que vous utiliserez comprennent GET, POST, PUT et DELETE. Merci de consulter la documentation officielle de Camunda( lien dans Docs sources) pour obtenir des informations détaillées sur les points d'accès de l'API, cependant en voici un exemple.
@@ -64,13 +64,13 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
             }
          ~~~
 
-## Slide 8 : External Tasks
+## 6 : External Tasks
 
   1. Une tache externe (external task) est une étape d'un processus gérée en dehors du moteur de processus, ce qui permet une intégration flexible avec d'autres systèmes et une collaboration avec des acteurs externes pour l'accomplissement de la tâche.
   2. Exemple:
   3. Avantages à utiliser les taches externes:
 
-## Slide 9 : Exemple de Projet - Gestion de Congés
+## 7 : Exemple de Projet - Gestion de Congés
 
 - **Titre :** “Exemple de Projet - Gestion de Congés”
 - Présentation détaillée d’un exemple de projet de gestion des demandes de congés :
@@ -78,7 +78,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
     ![BPMN Modele](/process.png)
 
 
-## Docs sources
+## 8 : Docs sources
 
 - [Camunda site officiel v07](https://docs.camunda.org/manual/7.20/)
 - [Baeldung camunda](https://www.baeldung.com/spring-boot-embedded-camunda)
