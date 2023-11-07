@@ -54,7 +54,7 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
                 }
               }
             }
-         \~~~
+         ~~~
 
 ## Slide 8 : External Tasks
 
