@@ -93,4 +93,5 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
 - [Camunda Engine Rest docs](https://stage.docs.camunda.org/rest/camunda-bpm-platform/7.21-SNAPSHOT/)
 - [Camunda BPMN Reference](https://camunda.com/bpmn/reference/)
 - [Camunda external tasks article](https://blog.bernd-ruecker.com/how-to-write-glue-code-without-java-delegates-in-camunda-cloud-9ec0495d2ba5)
+- [How to complete an external task](https://camunda.com/blog/2022/01/qa-how-can-i-complete-a-service-task-via-the-rest-api/)
 
