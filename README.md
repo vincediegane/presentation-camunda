@@ -75,7 +75,91 @@ En combinant ces éléments de manière appropriée dans un diagramme BPMN, les 
   - Spécifier le topic de la tâche
     
   4. Exemple:
-  5. Avantages à utiliser les taches externes:
+     Dans le cas ci-dessus où nous avons un processus qui a ajouté du travail à la liste des tâches, nous pouvons utiliser l'API REST pour compléter cette tâche.
+
+1 - Tout d'abord, nous devons effectuer un appel REST pour trouver l'instance de processus :
+
+	- curl -X GET http://localhost:8080/engine-rest/process-instance?active=true
+     [
+		  {
+        "links": [],
+        "id": "88ae07cf-7e1a-11ee-aba1-705a0f3c6dd2",
+        "definitionId": "gestion-conges-process:1:72cc394e-7e1a-11ee-aba1-705a0f3c6dd2",
+        "businessKey": null,
+        "caseInstanceId": null,
+        "ended": false,
+        "suspended": false,
+        "tenantId": null
+    	}
+  	]
+    
+
+	
+2 - Dans ce JSON, nous voyons l'ID que nous pouvons ensuite utiliser pour obtenir la tâche externe :
+	
+		- curl -X GET http://localhost:8080/engine-rest/external-task/88b13c28-7e1a-11ee-aba1-705a0f3c6dd2
+		
+			{
+				"activityId": "Activity_1tm2cb5",
+				"activityInstanceId": "Activity_1tm2cb5:88b09fe7-7e1a-11ee-aba1-705a0f3c6dd2",
+				"errorMessage": null,
+				"executionId": "88b078d6-7e1a-11ee-aba1-705a0f3c6dd2",
+				"id": "88b13c28-7e1a-11ee-aba1-705a0f3c6dd2",
+				"lockExpirationTime": null,
+				"processDefinitionId": "gestion-conges-process:1:72cc394e-7e1a-11ee-aba1-705a0f3c6dd2",
+				"processDefinitionKey": "gestion-conges-process",
+				"processDefinitionVersionTag": null,
+				"processInstanceId": "88ae07cf-7e1a-11ee-aba1-705a0f3c6dd2",
+				"retries": null,
+				"suspended": false,
+				"workerId": null,
+				"topicName": "decisionManager",
+				"tenantId": null,
+				"priority": 0,
+				"businessKey": null
+			}
+			
+		- Nous en savons beaucoup sur le processus et à partir des données renvoyées, telles que l'ID, l'ID de la définition de processus, etc., mais nous pouvons également voir que la tâche a le `topic-id` de 'decisionManager'. En utilisant l'API REST, nous pouvons récupérer et verrouiller cette tâche.
+	
+	3 - curl -X POST "http://localhost:8080/engine-rest/external-task/fetchAndLock" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"workerId\":\"aWorkerId\",\"maxTasks\":1,\"usePriority\":true,\"topics\":[{\"topicName\":\"handle_call\",\"lockDuration\":600000,\"variables\":[\"orderId\"]}]}"
+	
+		- Il y a beaucoup de choses dans cette demande, donc décomposons un peu. Nous envoyons un objet JSON avec beaucoup d'informations :
+			
+			{
+				"workerId": "aWorkerId",
+				"maxTasks": 1,
+				"usePriority": true,
+				"topics": [
+					{
+						"topicName": "decisionManager",
+						"lockDuration": 600000,
+						"variables": [
+						  "approved"
+						]
+					}
+				]
+			}
+			
+		- Les points importants à noter sont l'ID du worker, les topics et la durée de verrouillage(lockDuration). La durée de verrouillage dans cet exemple est de 60 secondes car nous avons besoin de temps pour effectivement compléter la tâche.
+	
+	4 - Maintenant que la tâche est verrouillée, nous devons la compléter.Nous devons effectuer une autre requête pour la compléter :
+		
+		- curl -X POST "http://localhost:8080/engine-rest/external-task/0997307a-6366-11ec-952c-0242661ea8d3/complete" -H  "accept: */*" -H  "Content-Type: application/json" -d "{\"workerId\":\"aWorkerId\",\"variables\":{\"aVariable\":{\"value\":\"aStringValue\"},\"anotherVariable\":{\"value\":42},\"aThirdVariable\":{\"value\":true}},\"localVariables\":{\"aLocalVariable\":{\"value\":\"aStringValue\"}}}"
+		
+		- Décomposons le JSON que nous renvoyons pour compléter la tâche :
+		
+		{
+			"workerId": "aWorkerId",
+			"variables": {
+				"approved": {
+				  "value": true
+				}
+			}
+		}
+
+    Si vous souhaitez envoyer des informations au processus, vous pouvez inclure des variables dans votre réponse pour compléter la tâche.
+
+  6. Avantages à utiliser les taches externes:
 
 ## 7 : Exemple de Projet - Gestion de Congés
 
